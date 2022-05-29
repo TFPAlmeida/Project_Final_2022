@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="650.0" prefWidth="997.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JavaFx.Controller">
+    <children>
+        <MenuBar layoutX="-7.0" layoutY="-3.0" prefHeight="25.0" prefWidth="1012.0">
+            <menus>
+                <Menu id="fileMenu" mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem fx:id="infoTxtMenu" mnemonicParsing="false" onAction="#handleCarregarInfoTXT" text="Carregar Info Txt" />
+                <Menu id="fileMenu" mnemonicParsing="false" text="TXT">
+                    <items>
+                        <MenuItem fx:id="carregarUTxtMenu" mnemonicParsing="false" onAction="#handlewriteUsersTXT" text="Save utilizadores Txt" />
+                        <MenuItem fx:id="carregarNTxtMenu" mnemonicParsing="false" onAction="#handlewriteNodesTXT" text="Save nodes Txt" />
+                        <MenuItem fx:id="carregarLTxtMenu" mnemonicParsing="false" onAction="#handlewriteLigacoesTXT" text="Save ligacoes Txt" />
+                        <MenuItem fx:id="carregarETxtMenu" mnemonicParsing="false" onAction="#escritaFicheiroTxtEtiquetasFX" text="Save etiquetas Txt" />
+                    </items></Menu>
+                        <Menu id="fileMenu" mnemonicParsing="false" text="BIN">
+                            <items>
+                                <MenuItem fx:id="carregarUBinMenu" mnemonicParsing="false" onAction="#handlewriteUsersBIN" text="Save users Bin" />
+                                <MenuItem fx:id="carregarNBinMenu" mnemonicParsing="false" onAction="#handlewriteNodesBIN" text="Save nodes Bin" />
+                                <MenuItem fx:id="carregarLBinMenu" mnemonicParsing="false" onAction="#handlewriteLigacoesBIN" text="Save ligacoes Bin" />
+                                <MenuItem fx:id="carregarEBinMenu" mnemonicParsing="false" onAction="#handlewriteEtiquetasBIN" text="Save etiquetas Bin" />
+                            </items></Menu>
+                    </items></Menu>
+            </menus>
+        </MenuBar>
+        <TabPane layoutY="22.0" prefHeight="629.0" prefWidth="1005.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Nowarpolis">
+                    <content>
+                        <Pane>
+                            <children>
+                                <VBox prefHeight="578.0" prefWidth="972.0">
+                                    <children>
+                                        <Pane fx:id="graphPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="100" minWidth="100" snapToPixel="false">
+                                            <VBox.margin>
+                                                <Insets left="20.0" top="50.0" />
+                                            </VBox.margin>
+                                            <children>
+                                                <Separator layoutY="228.0" prefHeight="0.0" prefWidth="932.0" />
+                                                <Separator layoutX="465.0" layoutY="-7.0" orientation="VERTICAL" prefHeight="472.0" prefWidth="0.0" />
+                                            </children>
+                                            <opaqueInsets>
+                                                <Insets />
+                                            </opaqueInsets>
+                                        </Pane>
+                                    </children>
+                                    <opaqueInsets>
+                                        <Insets />
+                                    </opaqueInsets>
+                                </VBox>
+                            </children>
+                        </Pane>
+                    </content>
+                </Tab>
+
+                <Tab text="ST'S">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="556.0" prefWidth="926.0">
+                            <children>
+                                <TabPane prefHeight="550.0" prefWidth="972.0" tabClosingPolicy="UNAVAILABLE">
+                                    <tabs>
+                                        <Tab text="Utilizadores">
+                                            <content>
+                                                <AnchorPane>
+                                                    <children>
+                                                        <TableView fx:id="usersTable" prefHeight="400.0" prefWidth="972.0">
+                                                            <columns>
+                                                                <TableColumn fx:id="idUtilizadores" prefWidth="75.0" text="ID" />
+                                                                <TableColumn fx:id="nomeUtilizadores" prefWidth="75.0" text="Nome" />
+                                                                <TableColumn fx:id="tipoUtilizadores" prefWidth="75.0" text="Tipo" />
+                                                                <TableColumn fx:id="veiculoUtilizadores" prefWidth="75.0" text="Veiculo" />
+                                                            </columns>
+                                                        </TableView>
+                                                        <VBox layoutX="2.0" layoutY="398.0" prefHeight="174.0" prefWidth="972.0">
+                                                            <children>
+                                                                <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="14.0" prefWidth="976.0" snapToPixel="false">
+                                                                    <children>
+                                                                        <TextField fx:id="nomeUtilizadoresTextField" prefHeight="26.0" prefWidth="106.0" promptText="Nome">
+                                                                            <HBox.margin>
+                                                                                <Insets left="20.0" />
+                                                                            </HBox.margin>
+                                                                        </TextField>
+                                                                        <TextField fx:id="tipoUtilizadoresTextField" prefHeight="26.0" prefWidth="106.0" promptText="Tipo">
+                                                                            <HBox.margin>
+                                                                                <Insets left="20.0" />
+                                                                            </HBox.margin>
+                                                                        </TextField>
+                                                                        <TextField fx:id="veiculoUtilizadoresTextField" prefHeight="26.0" prefWidth="106.0" promptText="Veiculo">
+                                                                            <HBox.margin>
+                                                                                <Insets left="20.0" />
+                                                                            </HBox.margin>
+                                                                        </TextField>
+                                                                        <Button fx:id="adicionarUtilizadores" mnemonicParsing="false" onAction="#handleAdicionarUtilizador" text="Adicionar">
+                                                                            <HBox.margin>
+                                                                                <Insets left="20.0" />
+                                                                            </HBox.margin>
+                                                                        </Button>
+                                                                        <Button fx:id="removerUtilizadores" mnemonicParsing="false" onAction="#handleRemoveUserAction" text="Remover">
+                                                                            <HBox.margin>
+                                                                                <Insets left="20.0" />
+                                                                            </HBox.margin>
+                                                                        </Button>
+                                                                    </children>
+                                                                    <VBox.margin>
+                                                                        <Insets top="20.0" />
+                                                                    </VBox.margin>
+                                                                    <cursor>
+                                                                        <Cursor fx:constant="DEFAULT" />
+                                                                    </cursor>
+                                                                </HBox>
+                                                            </children>
+                                                        </VBox>
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                        <Tab text="Nodes">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <TableView fx:id="nodesTable" prefHeight="400.0" prefWidth="972.0">
+                                                            <columns>
+                                                                <TableColumn fx:id="nomeNodes" prefWidth="75.0" text="Nome" />
+                                                                <TableColumn fx:id="tipoNodes" prefWidth="75.0" text="Tipo" />
+                                                                <TableColumn fx:id="tipopoiNodes" prefWidth="75.0" text="Tipo Poi" />
+                                                                <TableColumn fx:id="latitudeNodes" prefWidth="104.0" text="Coordenada X" />
+                                                                <TableColumn fx:id="longitudeNodes" prefWidth="96.0" text="Coordenada Y" />
+                                                                <TableColumn fx:id="veiculoNodes" prefWidth="75.0" text="Veiculo" />
+                                                            </columns>
+                                                        </TableView>
+                                                        <VBox layoutX="2.0" layoutY="401.0" prefHeight="174.0" prefWidth="972.0">
+                                                            <children>
+                                                                <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="14.0" prefWidth="976.0" snapToPixel="false">
+                                                                    <children>
+                                                                        <TextField fx:id="idNodesTextField" prefHeight="26.0" prefWidth="106.0" promptText="ID">
+                                                                            <HBox.margin>
+                                                                                <Insets left="20.0" />
+                                                                            </HBox.margin>
+                                                                        </TextField>
+                                                                        <TextField fx:id="nomeNodesTextField" prefHeight="26.0" prefWidth="106.0" promptText="Nome">
+                                                                            <HBox.margin>
+                                                                                <Insets left="20.0" />
+                                                                            </HBox.margin>
+                                                                        </TextField>
+                                                                        <TextField fx:id="tipoNodesTextField" prefHeight="26.0" prefWidth="106.0" promptText="Tipo">
+                                                                            <HBox.margin>
+                                                                                <Insets left="20.0" />
+                                                                            </HBox.margin>
+                                                                        </TextField>
+                                                                        <TextField prefHeight="26.0" prefWidth="106.0" promptText="x" fx:id="xNodesTextField">
+                                                                            <HBox.margin>
+                                                                                <Insets left="20.0" />
+                                                                            </HBox.margin>
+                                                                        </TextField>
+                                                                        <TextField fx:id="yNodesTextField" prefHeight="26.0" prefWidth="106.0" promptText="y">
+                                                                            <HBox.margin>
+                                                                                <Insets left="20.0" />
+                                                                            </HBox.margin>
+                                                                        </TextField>
+                                                                        <TextField fx:id="veiculoNodesTextField" prefHeight="26.0" prefWidth="106.0" promptText="Veiculo">
+                                                                            <HBox.margin>
+                                                                                <Insets left="20.0" />
+                                                                            </HBox.margin>
+                                                                        </TextField>
+                                                      <TextField fx:id="tipopoiNodesTextField" prefHeight="26.0" prefWidth="106.0" promptText="Tipo Poi">
+                                                         <HBox.margin>
+                                                            <Insets left="20.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                                    </children>
+                                                                    <VBox.margin>
+                                                                        <Insets top="20.0" />
+                                                                    </VBox.margin>
+                                                                    <cursor>
+                                                                        <Cursor fx:constant="DEFAULT" />
+                                                                    </cursor>
+                                                                </HBox>
+                                                                <HBox layoutX="10.0" layoutY="30.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="14.0" prefWidth="976.0" snapToPixel="false">
+                                                                    <cursor>
+                                                                        <Cursor fx:constant="DEFAULT" />
+                                                                    </cursor>
+                                                                    <children>
+                                                                        <Button fx:id="adicionarNodes" mnemonicParsing="false" onAction="#handleAdicionarNodes" text="Adicionar">
+                                                                            <HBox.margin>
+                                                                                <Insets left="20.0" right="20.0" />
+                                                                            </HBox.margin>
+                                                                        </Button>
+                                                                        <Button fx:id="removerNodes" mnemonicParsing="false" onAction="#handleRemoveNodesAction" text="Remover" />
+                                                                    </children>
+                                                                    <VBox.margin>
+                                                                        <Insets top="10.0" />
+                                                                    </VBox.margin>
+                                                                </HBox>
+                                                            </children>
+                                                        </VBox>
+                                                    </children></AnchorPane>
+                                            </content>
+                                        </Tab>
+                                        <Tab text="Logs">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <TableView fx:id="logsTable" layoutY="-1.0" prefHeight="400.0" prefWidth="972.0">
+                                                            <columns>
+                                                                <TableColumn fx:id="nodeLogs" prefWidth="137.0" text="Node" />
+                                                                <TableColumn fx:id="dataLogs" prefWidth="137.0" text="Data Registo" />
+                                                                <TableColumn fx:id="infoLogs" prefWidth="266.0" text="Info" />
+                                                                <TableColumn fx:id="mensagemLogs" minWidth="0.0" prefWidth="217.0" text="Mensagem" />
+                                                                <TableColumn fx:id="userLogs" minWidth="0.0" prefWidth="217.0" text="UserId" />
+                                                            </columns>
+                                                        </TableView>
+                                                        <VBox layoutY="399.0" prefHeight="174.0" prefWidth="972.0">
+                                                            <children>
+                                                                <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="14.0" prefWidth="976.0" snapToPixel="false">
+                                                                    <children>
+                                                                        <TextField fx:id="nodeLogsTextField" layoutX="30.0" layoutY="10.0" prefHeight="26.0" prefWidth="106.0" promptText="Node" />
+                                                                        <TextField fx:id="dataLogsTextField" prefHeight="26.0" prefWidth="106.0" promptText="Data Registo">
+                                                                            <HBox.margin>
+                                                                                <Insets left="20.0" />
+                                                                            </HBox.margin>
+                                                                        </TextField>
+                                                                        <TextField fx:id="infoLogsTextField" prefHeight="26.0" prefWidth="106.0" promptText="Info">
+                                                                            <HBox.margin>
+                                                                                <Insets left="20.0" />
+                                                                            </HBox.margin>
+                                                                        </TextField>
+                                                                        <TextField fx:id="mensagemLogsTextField" prefHeight="26.0" prefWidth="106.0" promptText="Mensagem">
+                                                                            <HBox.margin>
+                                                                                <Insets left="20.0" />
+                                                                            </HBox.margin>
+                                                                        </TextField>
+                                                                        <TextField fx:id="userLogsTextField" prefHeight="26.0" prefWidth="106.0" promptText="UserId">
+                                                                            <HBox.margin>
+                                                                                <Insets left="20.0" />
+                                                                            </HBox.margin>
+                                                                        </TextField>
+                                                                        <Button fx:id="addLogs" mnemonicParsing="false" onAction="#handleAdicionarLogs" text="Adicionar">
+                                                                            <HBox.margin>
+                                                                                <Insets left="20.0" right="20.0" />
+                                                                            </HBox.margin>
+                                                                        </Button>
+                                                                        <Button fx:id="removeLogs" mnemonicParsing="false" text="Remover" />
+                                                                    </children>
+                                                                    <VBox.margin>
+                                                                        <Insets top="20.0" />
+                                                                    </VBox.margin>
+                                                                    <cursor>
+                                                                        <Cursor fx:constant="DEFAULT" />
+                                                                    </cursor>
+                                                                </HBox>
+                                                            </children>
+                                                        </VBox>
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                        <Tab text="Etiquetas">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="545.0" prefWidth="972.0">
+                                                    <children>
+                                                        <TableView fx:id="etiquetasTable" prefHeight="385.0" prefWidth="972.0">
+                                                            <columns>
+                                                                <TableColumn fx:id="nomeEtiquetas" prefWidth="75.0" text="Nome" />
+                                                                <TableColumn fx:id="userEtiquetas" prefWidth="75.0" text="Utilizador" />
+                                                                <TableColumn fx:id="descricaoEtiquetas" prefWidth="77.0" text="Descricao" />
+                                                                <TableColumn fx:id="latitudeEtiquetas" prefWidth="104.0" text="Coordenada X" />
+                                                                <TableColumn fx:id="longitudeEtiquetas" prefWidth="96.0" text="Coordenada Y" />
+                                                            </columns>
+                                                        </TableView>
+                                                        <VBox layoutY="385.0" prefHeight="174.0" prefWidth="972.0">
+                                                            <children>
+                                                                <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="14.0" prefWidth="976.0" snapToPixel="false">
+                                                                    <children>
+                                                                        <TextField fx:id="nomeEtiquetasTextField" prefHeight="26.0" prefWidth="106.0" promptText="Nome">
+                                                                            <HBox.margin>
+                                                                                <Insets left="20.0" />
+                                                                            </HBox.margin>
+                                                                        </TextField>
+                                                                        <TextField fx:id="userEtiquetasTextField" prefHeight="26.0" prefWidth="106.0" promptText="Utilizador">
+                                                                            <HBox.margin>
+                                                                                <Insets left="20.0" />
+                                                                            </HBox.margin>
+                                                                        </TextField>
+                                                                        <TextField prefHeight="26.0" prefWidth="106.0" promptText="x" fx:id="xEtiquetasTextField">
+                                                                            <HBox.margin>
+                                                                                <Insets left="20.0" />
+                                                                            </HBox.margin>
+                                                                        </TextField>
+                                                                        <TextField fx:id="yEtiquetasTextField" prefHeight="26.0" prefWidth="106.0" promptText="x">
+                                                                            <HBox.margin>
+                                                                                <Insets left="20.0" />
+                                                                            </HBox.margin>
+                                                                        </TextField>
+                                                                        <TextField fx:id="descricaoEtiquetasTextField" prefHeight="26.0" prefWidth="106.0" promptText="Descricao">
+                                                                            <HBox.margin>
+                                                                                <Insets left="20.0" />
+                                                                            </HBox.margin>
+                                                                        </TextField>
+                                                                        <Button fx:id="addEtiquetas" mnemonicParsing="false" onAction="#handleAdicionarEtiqueta" text="Adicionar">
+                                                                            <HBox.margin>
+                                                                                <Insets left="20.0" right="20.0" />
+                                                                            </HBox.margin></Button>
+                                                                        <Button fx:id="removeEtiquetas" mnemonicParsing="false" onAction="#handleRemoveEtiquetaAction" prefHeight="25.0" prefWidth="66.0" text="Remover" />
+                                                                    </children>
+                                                                    <VBox.margin>
+                                                                        <Insets top="20.0" />
+                                                                    </VBox.margin>
+                                                                    <cursor>
+                                                                        <Cursor fx:constant="DEFAULT" />
+                                                                    </cursor>
+                                                                </HBox>
+                                                                <HBox layoutX="10.0" layoutY="30.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="14.0" prefWidth="976.0" snapToPixel="false">
+                                                                    <cursor>
+                                                                        <Cursor fx:constant="DEFAULT" />
+                                                                    </cursor>
+                                                                    <VBox.margin>
+                                                                        <Insets top="10.0" />
+                                                                    </VBox.margin>
+                                                                </HBox>
+                                                            </children>
+                                                        </VBox>
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                        <Tab text="Ligacoes">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <TableView fx:id="ligacoesTable" prefHeight="400.0" prefWidth="972.0">
+                                                            <columns>
+                                                                <TableColumn fx:id="idLigacoes" prefWidth="75.0" text="ID" />
+                                                                <TableColumn fx:id="node1Ligacoes" prefWidth="75.0" text="Node1" />
+                                                                <TableColumn fx:id="node2Ligacoes" prefWidth="104.0" text="Node2" />
+                                                                <TableColumn fx:id="distanciaLigacoes" prefWidth="96.0" text="Distancia" />
+                                                                <TableColumn fx:id="tempoLigacoes" prefWidth="75.0" text="Tempo" />
+                                                            </columns>
+                                                        </TableView>
+                                                        <VBox layoutX="2.0" layoutY="401.0" prefHeight="174.0" prefWidth="972.0">
+                                                            <children>
+                                                                <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="14.0" prefWidth="976.0" snapToPixel="false">
+                                                                    <children>
+                                                                        <TextField fx:id="node1TextField" prefHeight="26.0" prefWidth="106.0" promptText="Node1">
+                                                                            <HBox.margin>
+                                                                                <Insets left="20.0" />
+                                                                            </HBox.margin>
+                                                                        </TextField>
+                                                                        <TextField fx:id="node2TextField" prefHeight="26.0" prefWidth="106.0" promptText="Node2">
+                                                                            <HBox.margin>
+                                                                                <Insets left="20.0" />
+                                                                            </HBox.margin>
+                                                                        </TextField>
+                                                                        <TextField fx:id="distanciaTextField" prefHeight="26.0" prefWidth="106.0" promptText="Distancia">
+                                                                            <HBox.margin>
+                                                                                <Insets left="20.0" />
+                                                                            </HBox.margin>
+                                                                        </TextField>
+                                                                        <TextField fx:id="tempoTextField" prefHeight="26.0" prefWidth="106.0" promptText="tempo">
+                                                                            <HBox.margin>
+                                                                                <Insets left="20.0" />
+                                                                            </HBox.margin>
+                                                                        </TextField>
+                                                                        <Button fx:id="adicionarLigacoes" mnemonicParsing="false" onAction="#handleAdicionarNodes" text="Adicionar">
+                                                                            <HBox.margin>
+                                                                                <Insets left="20.0" right="20.0" />
+                                                                            </HBox.margin>
+                                                                        </Button>
+                                                                        <Button fx:id="removerLigacoes" mnemonicParsing="false" onAction="#handleRemoveLigacoesAction" text="Remover" />
+                                                                    </children>
+                                                                    <VBox.margin>
+                                                                        <Insets top="20.0" />
+                                                                    </VBox.margin>
+                                                                    <cursor>
+                                                                        <Cursor fx:constant="DEFAULT" />
+                                                                    </cursor>
+                                                                </HBox>
+                                                                <HBox layoutX="10.0" layoutY="30.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="14.0" prefWidth="976.0" snapToPixel="false">
+                                                                    <cursor>
+                                                                        <Cursor fx:constant="DEFAULT" />
+                                                                    </cursor>
+                                                                    <VBox.margin>
+                                                                        <Insets top="10.0" />
+                                                                    </VBox.margin>
+                                                                </HBox>
+                                                            </children>
+                                                        </VBox>
+                                                    </children></AnchorPane>
+                                            </content>
+                                        </Tab>
+                                    </tabs>
+                                </TabPane>
+                            </children></AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>

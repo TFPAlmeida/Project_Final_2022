@@ -1,0 +1,5 @@
+4
+Basic;Manuel;pedestre
+Basic;Pedro;carro_eletrico
+Basic;Joana;todos
+Basic;Maria;carro_eletrico

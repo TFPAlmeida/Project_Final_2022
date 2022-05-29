@@ -1,0 +1,115 @@
+27
+cr4, Cruzamento, Cruzamento, 20.0, 20.0;
+
+	 NLogs: 0
+cu6, Curva, Curva, 4: ;
+		1.0 | 16.0;
+		0.5 | 16.0;
+		0.0 | 16.5;
+		0.0 | 17.0;
+
+	 NLogs: 0
+cu2, Curva, Curva, 4: ;
+		23.0 | 4.0;
+		23.5 | 4.0;
+		24.0 | 4.5;
+		24.0 | 5.0;
+
+	 NLogs: 0
+p10, Poi, Jardins_do_Palacio_de_Cristal, 28.0, 28.0;
+
+	 NLogs: 0
+p7, Poi, Igreja_e_Torre_dos_Clerigos, 16.0, 24.0;
+
+	 NLogs: 0
+p3, Poi, Fundacao_Serralves, 30.0, 4.0;
+
+	 NLogs: 0
+cr3, Cruzamento, Cruzamento, 4.0, 20.0;
+
+	 NLogs: 0
+cu7, Curva, Curva, 4: ;
+		34.0 | 27.0;
+		34.0 | 27.5;
+		33.5 | 28.0;
+		33.0 | 28.0;
+
+	 NLogs: 0
+cu3, Curva, Curva, 4: ;
+		16.0 | 7.0;
+		16.0 | 7.5;
+		16.5 | 8.0;
+		17.0 | 8.0;
+
+	 NLogs: 0
+p6, Poi, Estação_Sao_Bento, 20.0, 24.0;
+
+	 NLogs: 0
+p2, Poi, Ribeira, 4.0, 8.0;
+
+	 NLogs: 0
+e1, Entroncamento, Entroncamento, 0.0, 24.0;
+
+	 NLogs: 0
+cr6, Cruzamento, Cruzamento, 20.0, 28.0;
+
+	 NLogs: 0
+cr2, Cruzamento, Cruzamento, 20.0, 16.0;
+
+	 NLogs: 0
+cu8, Curva, Curva, 4: ;
+		0.0 | 27.0;
+		0.0 | 27.5;
+		0.5 | 28.0;
+		1.0 | 28.0;
+
+	 NLogs: 0
+cu4, Curva, Curva, 4: ;
+		24.0 | 7.0;
+		24.0 | 7.5;
+		23.5 | 8.0;
+		23.0 | 8.0;
+
+	 NLogs: 0
+p11, Poi, Museu_Soares_dos_Reis, 20.0, 32.0;
+
+	 NLogs: 0
+p9, Poi, Mercado_do_Bolhao, 8.0, 28.0;
+
+	 NLogs: 0
+p5, Poi, Livraria_Lello, 34.0, 20.0;
+
+	 NLogs: 0
+p1, Poi, Caves_de_Vinho_do_Porto, 20.0, 4.0;
+
+	 NLogs: 1
+		 2022-5-29, Filomena, fogo
+e2, Entroncamento, Entroncamento, 34.0, 24.0;
+
+	 NLogs: 0
+cr5, Cruzamento, Cruzamento, 30.0, 20.0;
+
+	 NLogs: 0
+cr1, Cruzamento, Cruzamento, 20.0, 8.0;
+
+	 NLogs: 0
+cu5, Curva, Curva, 4: ;
+		33.0 | 16.0;
+		33.5 | 16.0;
+		34.0 | 16.5;
+		34.0 | 17.0;
+
+	 NLogs: 0
+cu1, Curva, Curva, 4: ;
+		15.0 | 4.0;
+		15.5 | 4.0;
+		16.0 | 4.5;
+		16.0 | 5.0;
+
+	 NLogs: 0
+p8, Poi, Casa_da_Musica, 24.0, 24.0;
+
+	 NLogs: 0
+p4, Poi, Catedral_da_Se, 0.0, 24.0;
+
+	 NLogs: 0

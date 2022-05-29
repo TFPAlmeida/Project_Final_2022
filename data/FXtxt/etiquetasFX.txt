@@ -1,0 +1,10 @@
+9
+e1;Fernando;oi;20;4;
+e2;Filomena;;20;32;
+e3;Fernando;;20;4;
+e4;Filomena;;34;20;
+e5;Filomena;;20;32;
+e6;Fernando;;20;4;
+e7;Fernando;;34;20;
+e8;Filomena;;20;32;
+e9;Filomena;;34;20;
